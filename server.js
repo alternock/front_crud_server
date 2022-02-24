@@ -156,7 +156,7 @@ server.post("/update/user/by/email", (req, res) => {
                 if (!err) {
                     res.status(200).json({
                         err: false,
-                        payload: "delete user success"
+                        payload: "update user success"
                     });
                 } else {
                     res.status(500).json({
