@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css"/>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div>
+      <h1>search</h1>
+      <ul>
+        <li><a href="../index.html">users</a></li>
+        <li><a href="./create.html">create user</a></li>
+        <li><a href="./remove.html">remove user</a></li>
+        <li><a href="./update.html">update user</a></li>
+      </ul>
+    </div>
+    <div>
+       <hr>
+        <div>
+            <label>email</label>
+            <input type="text" placeholder="name@exmaple.com" id="i-search-email"/>
+            <button id="btnSearchUser">search</button>
+        </div>
+        <hr/>
+        <ul id="v-search-user"></ul> 
+       <hr>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
