@@ -10,9 +10,7 @@ let pathFile = "./mock.json";
 
 server.use(cors());
 server.use(express.json());
-server.use(express.urlencoded({
-    extended: true
-}));
+server.use(express.urlencoded({extended:true}));
 
 
 server.get("/all/users", (req, res) => {
@@ -33,14 +31,14 @@ server.get("/all/users", (req, res) => {
 });
 
 
-server.get("/search/user/by/email", (req, res) => {
+server.post("/search/user/by/email", (req, res) => {
     let email = req.body.email;
-
+    
     fs.readFile(pathFile, "utf-8", (err, jsonFile) => {
         if (!err) {
             let jsonString = JSON.parse(jsonFile);
-            let user = jsonString.users.find(u => u.email === email);
-
+            let user = jsonString.users.find(u => u.email == email);
+            console.log("r: ", user)
             res.status(200).json({
                 err: false,
                 payload: user
@@ -62,7 +60,7 @@ server.post("/create/user", (req, res) => {
         age: req.body.age,
         country: req.body.country,
     };
-
+    
     fs.readFile(pathFile, "utf-8", (err, jsonFile) => {
         if (!err) {
             let jsonString = JSON.parse(jsonFile);
